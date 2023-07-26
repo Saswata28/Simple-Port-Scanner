@@ -16,12 +16,10 @@ def multiple_port_scan(target_host, target_ports):
         target_ip = gethostbyname(target_host)
     except:
         print(f"[-] can't resolve for {target_host}")
-        # for invalid IPs.
         return
     try:
         target_name = gethostbyaddr(target_ip)
         print(f"[+] scan result of {target_name[0]}")
-        # ('LAPTOP-U0MSHT9M', [], ['192.168.1.6']) this will be stored in target name so to get only the name of we write target name[0].
     except:
         print(f"[+] scan result of {target_ip}")
     setdefaulttimeout(1)
